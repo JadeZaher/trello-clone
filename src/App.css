@@ -1,38 +1,222 @@
+/* ######################################################General############################################################################################################## */
 .App {
+  /* scroll */
+  overflow: auto;
+  /* dimensions */
+  height: 100vh;
+  /* color */
+  background-color: #ebebeb;
+  /* typography */
   text-align: center;
+  font-size: 1.2rem;
+  color: rgb(0, 5, 80);
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* ######################################################Trello Board Styling ############################################################################################################## */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/*Card  Styling################################ */
+.card{
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+  /* spacing */
+  padding: .3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;  
+  /* color */
+  background-color: azure;
+  color: #000; 
+  /* shape */
+  border-radius: 10px;
+  /* typography */
+  font-size: 20pt;
+  text-align: left;
+  /* border */
+  border-bottom: solid #000 ;
+  border-top: solid #000 ;
+  filter: drop-shadow(-5px 2px 5px rgb(0, 5, 80)) ; 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.deleteCardButton{
+  
+  /* dimensions */
+  height: 40pt;
+  align-self: center;
+  /* spacing */
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  /* color */
+  background-color: #000;
+  color: white;
+  /* shape */
+  border-radius: 10px;  
+  /* typography */
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.addCardButton{
+  /* spacing */
+  padding: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  /* shape */
+  border-radius: 10px;
+  /* typography */
+  font-size: 20pt;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;  
+  /* border */
+  border-bottom: solid #000 ;
+  border-top: solid #000 ;
+  filter: drop-shadow(-5px 2px 5px rgb(0, 5, 80)) ;   
+
+}
+.currentCard{
+  opacity: .2;
+  filter: drop-shadow(20px 5px 5px rgb(120, 129, 255)) ; 
+}
+/*List  Styling################################ */
+.list{
+  /* flex-box */
   display: flex;
   flex-direction: column;
+  /* scroll */
+  overflow: auto;
+  /* spacing */
+  padding: 2rem;
+  margin-bottom: 2rem;
+  margin-top: .5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  /* color */
+  background-color: rgb(235, 235, 235);
+  /* shape */
+  border-radius: 10px;
+  /* border */
+  border: 3px solid rgb(0, 0, 0);
+  
+}
+
+.listHeader{
+  /* flex */
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 1;
+  /* dimensions */
+  max-height: 10%;
+  /* spacing */
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  /* shape */
+  border-radius: 10px;
+  /* color */
+  background-color: rgb(255, 255, 255);
+  /* border */
+  border-top: solid #000 ;
+  filter: drop-shadow(2px 5px 5px rgb(0, 5, 80)) ; 
+  /* typography */
+  font-weight: 800;
+  text-overflow: ellipsis;
+
 }
 
-.App-link {
-  color: #61dafb;
+.listWrap{
+  /* scroll */
+  scroll-behavior: auto;
+  overflow: hidden;
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* dimensions */
+  min-width: 30rem;
+  /* spacing */
+  margin: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* color */
+  background-color: rgb(180, 180, 180);
+  /* shape */
+  border-radius:  10px;
+  /* border */
+  border-left: 9px solid rgb(68, 0, 75);
+  border-right: 3px solid rgb(68, 0, 75);
+  border-top: 3px solid rgb(68, 0, 75);
+  border-bottom: 1px solid rgb(68, 0, 75);
+  filter: drop-shadow(5px 0px 10px rgb(198, 235, 220));
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*Board Styling################################ */
+.board{
+  /* scroll */
+  overflow: auto;
+  /* flex-box   */
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  /* dimensions */
+  height: 90vh;
+  /* color */
+  background-color:rgb(211, 211, 211);
+  /* border */
+  border: 10px solid rgb(0, 0, 0);
+
+
 }
+
+
+/* ######################################################Scroll Styling############################################################################################################## */
+/* Works on Firefox */
+* {
+
+  scrollbar-width: thin;
+}
+
+/* Works on Chrome, Edge, and Safari */
+* ::-webkit-scrollbar {
+
+  /* dimensions */
+  width: 10px;
+  height: 10px;
+
+  /* color */
+  background-color: rgb(0, 0, 0);
+ 
+  /* shape */
+  border-radius: 10px;
+}
+
+* ::-webkit-scrollbar-thumb{
+  
+  /* dimensions */
+  width: 10px;
+  height: 10px;
+
+  /* spacing */
+  
+  /* color */
+  background-color: rgb(153, 141, 214);
+
+  /* shape */
+  border-radius: 10px;
+
+  
+ 
+
+}
+
